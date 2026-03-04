@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-03-04T04:32:22.931Z",
+    "end": "2026-03-04T04:32:30.915Z",
+    "duration": 7984,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f565616e-4657-4441-9cc5-307a6871af0f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\checkOut.cy.js",
+      "file": "cypress\\e2e\\checkOut.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c7815286-029d-41c0-a62a-d2dc87ca5d83",
+          "title": "Data Driven - CheckOut Feature",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC_CO_01 - Succesfull Checkout 2 Items",
+              "fullTitle": "Data Driven - CheckOut Feature TC_CO_01 - Succesfull Checkout 2 Items",
+              "timedOut": null,
+              "duration": 5616,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//assertion : (/inventory.html) page\ncy.url().should('include', '/inventory.html');\n//Pilih 2 item random\ninventoryPage.addRandomProduct(2);\ninventoryPage.goToCart();\ncy.url().should('include', '/cart.html');\ncheckoutPage.checkoutButton.click();\ncheckoutPage.fillCheckoutForm(\n//isikan data dari fixtures [\"ID\"]\nformCo.dataCo[\"firstName\"], formCo.dataCo[\"lastName\"], formCo.dataCo[\"postalCode\"]);\ncheckoutPage.continueButton.click();\n//Finish\ncheckoutPage.finishButton.click();\n//Assertion\ncheckoutPage.verifyCheckoutSuccess();",
+              "err": {},
+              "uuid": "a9c78908-9d3b-4803-a1f9-a029f4771174",
+              "parentUUID": "c7815286-029d-41c0-a62a-d2dc87ca5d83",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a9c78908-9d3b-4803-a1f9-a029f4771174"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5616,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

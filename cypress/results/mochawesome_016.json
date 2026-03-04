@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-03-04T04:32:40.235Z",
+    "end": "2026-03-04T04:32:47.935Z",
+    "duration": 7700,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "995f0ed7-9a68-4644-bccb-4a78880f5b67",
+      "title": "",
+      "fullFile": "cypress\\e2e\\loginPage.cy.js",
+      "file": "cypress\\e2e\\loginPage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8ab43c12-e52f-40de-8597-b507ebb14f18",
+          "title": "Data Driven Testing - Login Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC01 - Berhasil login dengan kredensial valid",
+              "fullTitle": "Data Driven Testing - Login Page TC01 - Berhasil login dengan kredensial valid",
+              "timedOut": null,
+              "duration": 2633,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  user_name,\n  password\n} = loginData.validLogin;\ncy.get('#user-name').clear().type(user_name);\ncy.get('#password').clear().type(password);\ncy.get('#login-button').click();\n// Validasi: redirect ke halaman inventory\ncy.url().should('include', '/inventory.html');\ncy.url().should('not.include', 'saucedemo.com/$');",
+              "err": {},
+              "uuid": "da7b49aa-0bd9-4fea-86cb-d39412b62c42",
+              "parentUUID": "8ab43c12-e52f-40de-8597-b507ebb14f18",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC02 - Gagal login dengan kredensial tidak valid",
+              "fullTitle": "Data Driven Testing - Login Page TC02 - Gagal login dengan kredensial tidak valid",
+              "timedOut": null,
+              "duration": 1656,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  user_name,\n  password\n} = loginData.invalidLogin;\ncy.get('#user-name').clear().type(user_name);\ncy.get('#password').clear().type(password);\ncy.get('#login-button').click();\n// Validasi: tetap di halaman login & muncul pesan error\ncy.url().should('eq', 'https://www.saucedemo.com/');\ncy.get('[data-test=\"error\"]').should('be.visible');",
+              "err": {},
+              "uuid": "767a60b9-75da-4c9f-82dd-740d4c050650",
+              "parentUUID": "8ab43c12-e52f-40de-8597-b507ebb14f18",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TC03 - Field Login Wajib Terisi",
+              "fullTitle": "Data Driven Testing - Login Page TC03 - Field Login Wajib Terisi",
+              "timedOut": null,
+              "duration": 1123,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const {\n  user_name,\n  password\n} = loginData.emptyLogin;\ncy.get('#user-name').clear().type(user_name);\ncy.get('#password').clear().type(password);\ncy.get('#login-button').click();\n// Validasi: tetap di halaman login & muncul pesan error\ncy.url().should('eq', 'https://www.saucedemo.com/');\ncy.get('[data-test=\"error\"]').should('be.visible');",
+              "err": {},
+              "uuid": "81390936-9281-4a91-8fe9-3a6226859036",
+              "parentUUID": "8ab43c12-e52f-40de-8597-b507ebb14f18",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "da7b49aa-0bd9-4fea-86cb-d39412b62c42",
+            "767a60b9-75da-4c9f-82dd-740d4c050650",
+            "81390936-9281-4a91-8fe9-3a6226859036"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5412,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
