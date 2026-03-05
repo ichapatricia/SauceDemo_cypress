@@ -70,4 +70,5 @@ pipeline {
             echo '✅ Cypress tests passed!'
         }
     }
+
 }
